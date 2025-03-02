@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "Chatbot"
+version = "0.1.0"
+description = ""
+authors = ["Duc Linh <ndlinh.ai@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+fastapi = { extras = ["all"], version = "^0.110.0" }
+python-multipart = "^0.0.9"
+injector = "^0.21.0"
+uvicorn = "^0.30.1"
+pydantic = "^2.3.0"
+pydantic-settings = "^2.3.0"
+slowapi="^0.1.9"
+loguru = "^0.7.2"
+streamlit = "^1.35.0"
+tqdm = "^4.66.4"
+python-dotenv = "^1.0.1"
+openai= "^1.52.0"
+ultralytics="^8.3.19"
+scikit-learn="^1.5.2"
+pymilvus="^2.4.8"
+watchdog="^5.0.3"
+psycopg2-binary = "2.9.10"
+psycopg-pool="^3.2.4"
+Crawl4AI="^0.4.247"
+PyMuPDF="^1.25.3"
+spacy="^3.8.4"
+langdetect="^1.0.9"
+pytesseract="^0.3.13"
+python-docx="^1.1.2"
+python-pptx="^1.0.2"
+openpyxl="^3.1.5"
+bleach="^6.0.0"
+
+# ai
+langchain-openai="^0.2.12"
+langgraph="^0.2.56"
+langchain="^0.3.10"
+soundfile="^0.13.0"
+sounddevice="^0.5.1"
+langchain-community="^0.3.15"
+duckduckgo-search="^7.2.1"
+langgraph-checkpoint-postgres = "2.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

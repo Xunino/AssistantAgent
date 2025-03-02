@@ -1,0 +1,16 @@
+name: raspberry
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip:
+    - poetry==1.8.2
+    - tomlkit==0.12.4
+    - build==1.2.1
+
+# Run the following command to create the environment
+# conda env create -f conda.yaml
+
+# Activate the environment
+# conda activate raspberry

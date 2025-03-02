@@ -1,0 +1,33 @@
+COLLECTION_NAME: "raspberry"
+
+TABLE_CONFIG:
+  COL_1:
+    NAME: "HUMAN_NAME"
+    D_TYPE: "VARCHAR"
+    MAX_LEN: 500
+  COL_2:
+    NAME: "EMBEDDING"
+    D_TYPE: "FLOAT_VECTOR"
+    DIM: 768
+
+INDEXING:
+  FIELD_NAME: "EMBEDDING"
+  PARAMS:
+    index_type: "IVF_FLAT"
+    metric_type: "L2"
+    params:
+      nlist: 1024
+
+SEARCH:
+  PARAMS:
+    data: None
+    anns_field: "EMBEDDING"
+    output_fields: [ "HUMAN_NAME"]
+    param:
+      metric_type: "L2"
+      params:
+        nprobe: 10
+    offset: None
+    limit: None
+    expr: None
+    consistency_level: "Strong"
