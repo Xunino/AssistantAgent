@@ -10,11 +10,12 @@ class GraphState(BaseModel):
     user_question: str = ""
     audio_path: Any = ""
     assistant_response: str = ""
-    messages: Annotated[List[AnyMessage], add_messages]
+    messages: Annotated[List[AnyMessage], add_messages] = []
     tool_in_message: List[AnyMessage | Any] = []
     selected_tool: Dict = {}  # Nona
     detailed_description: str = ""
     google_search_result: str = ""
+    temp_audio_path: str = ""
 
 
 class NodeState(Enum):
@@ -27,7 +28,9 @@ class NodeState(Enum):
     refine_answer_from_gg_node = auto()
 
     # Response nodes
-    response_node = auto()
+    talking_node = auto()
+    thinking_node = auto()
+    hear_node = auto()
 
 
 class Stream(Enum):
@@ -47,3 +50,4 @@ class ToolActions(Enum):
 class CustomNode(Enum):
     on_image_generated = auto()
     on_audio_generated = auto()
+    on_transcription_complete = auto()

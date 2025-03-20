@@ -18,14 +18,15 @@ from app.services.graph.config import (
 
 # from app.services.graph.eyes.eye import Eye
 # from app.services.graph.brain.nodes.response_anwser import ResponseAnswer
-
+# from app.services.graph.brain.nodes.brain import Brain
 from app.services.graph.brain.nodes.brainstorming import Brainstorming
 from app.services.graph.brain.nodes.refine_query_for_gg import GoogleSearch
 from app.services.graph.brain.nodes.refine_answer_from_gg import RefineAnswerFromGG
 from app.services.graph.brain.nodes.generate_sketch_concept import (
     GenerateSketchConcepts,
 )
-from app.services.graph.mouth.mouth import Mouth
+
+# from app.services.graph.mouth.mouth import Mouth
 from app.services.graph.hand.draw import Draw
 from app.settings import PostgresSettings
 
@@ -91,7 +92,7 @@ class AssistantGraph:
 
         # # Add response node
         # self.graph.add_node(
-        #     NodeState.response_node.name, ResponseAnswer(self.llm).ainvoke
+        #     NodeState.talking_node.name, ResponseAnswer(self.llm).ainvoke
         # )
 
     def _add_edge(self):
@@ -187,7 +188,7 @@ class AssistantGraph:
                             # So we only print non-empty content
                             for data in data["chunk"].content.split(" "):
                                 time.sleep(0.5)
-                                yield data
+                                yield data + " "
 
     async def astream(
         self,

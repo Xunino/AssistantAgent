@@ -33,6 +33,7 @@ python-docx="^1.1.2"
 python-pptx="^1.0.2"
 openpyxl="^3.1.5"
 bleach="^6.0.0"
+audio-recorder-streamlit="^0.0.10"
 
 # ai
 langchain-openai="^0.2.12"

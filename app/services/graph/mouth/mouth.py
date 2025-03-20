@@ -37,10 +37,10 @@ class Mouth(Runnable):
                 buffer.write(chunk)
             buffer.seek(0)
 
-            with sf.SoundFile(buffer, "r") as sound_file:
-                data = sound_file.read(dtype="float32")
-                sd.play(data, sound_file.samplerate)
-                sd.wait()
+            # with sf.SoundFile(buffer, "r") as sound_file:
+            #     data = sound_file.read(dtype="float32")
+            #     sd.play(data, sound_file.samplerate)
+            #     sd.wait()
 
             response.stream_to_file(speech_file_path)
         except Exception as err:
